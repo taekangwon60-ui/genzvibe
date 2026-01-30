@@ -1,3 +1,4 @@
+
 # Project Blueprint: GenzVibe - Global Meme Trend Analyzer
 
 ## 1. Overview
@@ -31,36 +32,46 @@ The project is divided into three main parts:
 
 ---
 
-## 4. Frontend Design (v1)
+## 4. Frontend Design (v1) - DEPRECATED
 
-The UI will be designed for scalability and a clean user experience.
-
-*   **Layout:**
-    *   **Header:** Contains the site title ("GenzVibe") and primary navigation.
-    *   **Filters:** Dropdown menus to select:
-        *   **Country:** Worldwide (default), USA, India, Indonesia, Brazil, Korea.
-        *   **Platform:** YouTube (default), TikTok, Instagram, All.
-    *   **Dashboard:** A grid or list view to display trending keywords as cards. Each card will show:
-        *   Rank
-        *   Keyword
-        *   Trend Score
-        *   A sparkline/chart showing trend velocity (future feature)
-        *   Links to related content.
+This initial design is now deprecated and will be replaced by V2.
 
 ---
 
-## 5. Current Plan: Phase 1 - Foundation & UI Scaffolding
+## 5. Frontend Design (V2): The Redesign
 
-This initial phase focuses on setting up the core technologies and building the basic UI structure for the dashboard.
+### Plan & Features
 
-### Steps:
+The second version focuses on a complete visual and structural overhaul to create a more "hip, clean, and easy to view" experience.
 
-1.  **[Done]** Update the project blueprint (`blueprint.md`).
-2.  **Setup Shadcn UI:** Initialize Shadcn UI to integrate its component library.
-3.  **Update Base Styles:** Modify `globals.css` and `tailwind.config.ts` as required by Shadcn UI.
-4.  **Create Core Components:**
-    *   `Header.tsx`: Application header.
-    *   `Filters.tsx`: Country and Platform selection controls.
-    *   `Dashboard.tsx`: Placeholder for displaying trend data.
-5.  **Build Main Page:** Redesign `page.tsx` to assemble the Header, Filters, and Dashboard components into a cohesive layout.
-6.  **Push to GitHub:** Commit and push the new foundational structure to the repository.
+- **Aesthetic:** Modern Dark Mode UI.
+- **Layout:** A single-column, centered layout for better focus on content.
+- **Typography:** Use of 'Inter' font for clean and readable text.
+- **Header:** A simplified header that contains the application title and integrated filter controls. The logo is removed for now.
+- **Filters:**
+  - Redesigned and fixed dropdown menus for Country and Platform selection.
+  - Default selection set to "Worldwide" and "Youtube".
+  - The UI issues (checkmark overlapping, menu popping up) will be resolved.
+- **Data Visualization:**
+  - **Trend Rankings:** A prominently displayed list of the top trending keywords, showing rank, keyword, and trend score.
+  - **Comparison Chart:** A visual line chart comparing the trends over time for the top keywords.
+- **Color Palette:**
+  - Background: A deep, dark gray (`#111827`).
+  - Cards/Elements: A slightly lighter dark gray (`#1F2937`).
+  - Primary/Accent: A vibrant purple for interactive elements.
+  - Text: Clean white and light gray for readability.
+
+### Implementation Plan:
+
+1.  **[Current]** **Reset and Redesign:**
+    *   Update `globals.css` with the new dark mode color palette and typography.
+    *   Fix the `select.tsx` component to resolve UI bugs.
+    *   Delete the old `Header.tsx`, `Filters.tsx`, and `Dashboard.tsx` components.
+    *   Create new components:
+        *   `TrendRankings.tsx`: For the keyword list.
+        *   `TrendChart.tsx`: For the comparison chart.
+    *   Rebuild `page.tsx` from scratch with the new layout and components.
+2.  **[Next]** **Data Integration:**
+    *   Connect to a data source (initially mock data, then a real API) to populate the rankings and chart.
+3.  **[Future]** **Backend and Database:**
+    *   Build out the backend services for data crawling and storage.
